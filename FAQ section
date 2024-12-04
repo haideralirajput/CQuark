@@ -1,0 +1,430 @@
+<!-- Section File Name: FAQs -->
+<!-- Section Name: FAQs-->
+<!-- Presets Name: FAQs-->
+
+<style>
+  @media only screen and (max-width: 768px) {
+    #sid-{{section.id}} .main {
+      grid-template-columns: repeat(1, 1fr) !important;
+      margin-left: 5px;
+    }
+    #sid-{{section.id}} .faq {
+      margin-left: 14px !important;
+      
+    }   
+  }
+
+  @media only screen and (max-width: 1440px) {
+     #sid-{{section.id}} .headingfaq {
+       padding-left: 16% !important;
+
+     }
+  }
+  @media only screen and (max-width: 1024px) {
+  #sid-{{section.id}} .headingfaq {
+    padding-left: 0% !important;
+  }
+}
+  @media only screen and (max-width: 2560px) {
+    #sid-{{section.id}} .headingfaq {
+    padding-left: 4% !important;
+  }
+  }
+  
+  #sid-{{section.id}} .faq-question *{
+    margin: 0px;
+    text-align: left;
+    /* padding-bottom: 20px; */
+    
+  
+  }
+ #sid-{{section.id}} button.faq-question {
+       padding: 20px 35px 0px 35px;
+}
+
+  #sid-{{section.id}} .faq h1 {
+    
+    margin-bottom: 40px;
+  }
+  #sid-{{section.id}} .faq{
+    margin-left: 90px;
+    padding-top:0 !important;
+  }
+  #sid-{{section.id}} .faq-item {
+   
+  }
+  #sid-{{section.id}} .faq-question {
+    border:none;
+    width: 100%;
+     background-color: white; 
+    font-size: 16px !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    color: #000000;
+   /* padding-top: 10px; */
+    border-bottom: 1px solid #F5F5F5;
+    
+  }
+#sid-{{section.id}} .faq-question:hover{
+     background-color: #F5F5F5; 
+  }
+  #sid-{{section.id}} .headingfaq * {
+    {% if section.settings.border_image-top != blank %}
+      border-bottom: 5px solid transparent; 
+      border-top: 5px solid transparent;
+      border-image: url('{{ section.settings.border_image-top | img_url: 'master' }}') 15 stretch;
+      line-height: 1;
+    {% endif %}
+    text-align: left !important ;
+    width: fit-content;
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+   
+  }
+  #sid-{{section.id}} .faq-answer {
+    display: none;
+    padding: 0;
+    color: #000;
+    width: 75%;
+    border-top: none;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  #sid-{{section.id}} .plus {
+    font-size: 20px;
+    color: #333;
+     font-weight:500 !important;
+  }
+  #sid-{{section.id}} .open .faq-answer {
+    display: block;
+    padding: 20px 35px 0px 35px;
+  }
+  #sid-{{section.id}} .plus {
+    font-size: 20px;
+    color: #333;
+    transition: transform 0.3s ease;
+    font-weight:500;
+  }
+  #sid-{{section.id}} .open .plus {
+    transform: rotate(0deg); /* Rotates the plus sign */
+    content: '-'; 
+  }
+
+  #sid-{{section.id}} .main{ 
+    display:grid;
+    /* gap:100px; */
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+    max-width: 1000px;
+    padding:0px !important;
+  }
+  #sid-{{section.id}} .main_container{
+    width: 100%;
+    position: relative;
+    background-color: {{section.settings.bg_color}};
+    border-top: 30px solid transparent;
+    border-image: url({{section.settings.border_image |image_url}}) 30 stretch;
+  }
+  #sid-{{section.id}} .content_wrapper{
+    {% if section.settings.full_width == false %}
+      max-width: {{section.settings.maxWidth}}px;
+    {% endif %}
+    width: 100%;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_right }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_left }}px;
+  }
+  @media only screen and (max-width: 768px){
+    #sid-{{section.id}} .content_wrapper{
+      padding: {{ section.settings.padding_top_mb }}px {{ section.settings.padding_right_mb }}px {{ section.settings.padding_bottom_mb }}px {{ section.settings.padding_left_mb }}px;
+    }
+    #sid-{{section.id}} .main{ 
+      display:grid;
+      gap:20px;
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0 auto;
+      
+    }
+    #sid-{{section.id}} .main_container{   
+    }
+  }
+
+
+</style>
+
+<div id="sid-{{ section.id }}">
+  <div class="main_container">
+    <div class="content_wrapper">
+       <div class="headingfaq">
+         <h1 class="alignmnet">{{ section.settings.heading }}</h1>
+       </div>
+       <div class="faq main">
+         {% for block in section.blocks %}
+           <div class="block_wrapper" id="bid-{{ block.id }}">
+             {% if block.settings.question1 != blank and block.settings.answer1 != blank %}
+             <div class="faq-item">
+                <button class="faq-question">{{ block.settings.question1 }} <span class="plus">+</span></button>
+                <div class="faq-answer">
+                    <p>{{ block.settings.answer1 }}</p>
+                </div>
+             </div>
+             {% endif %}
+             
+             {% if block.settings.question2 != blank and block.settings.answer2 != blank %}
+             <div class="faq-item">
+                <button class="faq-question">{{ block.settings.question2 }} <span class="plus">+</span></button>
+                <div class="faq-answer">
+                    <p>{{ block.settings.answer2 }}</p>
+                </div>
+             </div>
+             {% endif %}
+             
+             {% if block.settings.question3 != blank and block.settings.answer3 != blank %}
+             <div class="faq-item">
+                <button class="faq-question">{{ block.settings.question3 }} <span class="plus">+</span></button>
+                <div class="faq-answer">
+                    <p>{{ block.settings.answer3 }}</p>
+                </div>
+             </div>
+             {% endif %}
+           </div>
+         {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  $(document).ready(function(){
+    $('#sid-{{section.id}} .faq-question').click(function() {
+      const parent = $(this).closest('.faq-item');
+
+      // Check if the clicked item is already open
+      const isOpen = parent.hasClass('open');
+
+      // Slide up all other open answers with a smooth sliding effect
+      $('.faq-item').removeClass('open').find('.faq-answer').slideUp(900); // Slide up in 600ms
+      $('.faq-item').find('.plus').text('+'); // Reset plus signs
+
+      // If the clicked item was not already open, open it with slideDown smoothly
+      if (!isOpen) {
+        parent.addClass('open');
+        parent.find('.faq-answer').slideDown(600); // Slide down smoothly in 600ms
+        $(this).find('.plus').text('−'); // Change to minus sign
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Page Full Width",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "maxWidth",
+      "label": "Page Width",
+      "default": 1440
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "range",
+      "id": "heading-font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "heading Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image-font_size",
+      "min": 12,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "image-font_size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "answer-font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Answer-font_size",
+      "default": 16
+    },
+
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+   
+    {
+      "type": "image_picker",
+      "id": "border_image",
+      "label": "border-Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "border_image-top",
+      "label": "border-Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "slider",
+      "type": "block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "question1",
+          "label": "Question One"
+        },
+        {
+          "type": "richtext",
+          "id": "answer1",
+          "label": "Answer One"
+        },
+        {
+          "type": "richtext",
+          "id": "question2",
+          "label": "Question Two"
+        },
+        {
+          "type": "richtext",
+          "id": "answer2",
+          "label": "Answer Two"
+        },
+        {
+          "type": "richtext",
+          "id": "question3",
+          "label": "Question Three"
+        },
+        {
+          "type": "richtext",
+          "id": "answer3",
+          "label": "Answer Three"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}
