@@ -1,0 +1,117 @@
+<!-- sections icon with text code -->
+<section class="trust-icons-section" style="background-color: {{ section.settings.background_color }};">
+  <div class="trust-icons-container">
+    {% for block in section.blocks %}
+      <div class="trust-icon">
+        <img src="{{ block.settings.icon | img_url: '100x100' }}" alt="{{ block.settings.title }}" style="width: {{ block.settings.icon_width }}px;" />
+        <div class="trust-icon-text">
+          <h4 style="color: {{ block.settings.primary_text_color }}; font-size: {{ block.settings.primary_text_font_size }}px;">{{ block.settings.title }}</h4>
+          <p style="color: {{ block.settings.secondary_text_color }}; font-size: {{ block.settings.secondary_text_font_size }}px;">{{ block.settings.subtitle }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% style %}
+.trust-icons-section {
+  padding: 20px 0;
+}
+.trust-icons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  text-align: center; /* Centers text within each item */
+}
+.trust-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers icon and text side by side */
+}
+.trust-icon img {
+  margin-right: 10px;
+  height: auto;
+}
+.trust-icon-text h4 {
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+.trust-icon-text p {
+  margin: 0;
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Trust Icons Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#e9f3fb"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "number",
+          "id": "icon_width",
+          "label": "Icon Image Width (px)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Primary Text"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Secondary Text"
+        },
+        {
+          "type": "color",
+          "id": "primary_text_color",
+          "label": "Primary Text Color",
+          "default": "#0074cc"
+        },
+        {
+          "type": "number",
+          "id": "primary_text_font_size",
+          "label": "Primary Text Font Size (px)",
+          "default": 16
+        },
+        {
+          "type": "color",
+          "id": "secondary_text_color",
+          "label": "Secondary Text Color",
+          "default": "#333333"
+        },
+        {
+          "type": "number",
+          "id": "secondary_text_font_size",
+          "label": "Secondary Text Font Size (px)",
+          "default": 14
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "trust icon section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
