@@ -1,0 +1,518 @@
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+is:starred 
+Enable desktop notifications for Gmail.
+   OK  No thanks
+3 of 3
+(no subject)
+Inbox
+
+Umaima <umaimamussadiq52@gmail.com>
+Attachments
+Oct 14, 2024, 12:07 PM
+to me
+
+
+ 7 Attachments
+  •  Scanned by Gmail
+<!-- mega menu start -->
+<div id="sid-{{ section.id }}">
+  <nav  class="mega-menu"  >
+  <ul class="nav-list">
+   
+    {% for block in section.blocks %}
+      <li class="nav-item">
+     <a style="color:{{ block.settings.main_link_color }} ; background-color:{{ block.settings.main_link_bg_color }} !important;" href="{{ block.settings.main_link_url }}" class="nav-link">{{ block.settings.main_link_text }}</a>
+
+        {% if block.settings.menu_enabled %}
+          <div class="mega-menu-content">
+           
+            {% if block.settings.column_title_1 %}
+            
+                <div class="menu-column">
+                <h4>{{ block.settings.column_title_1 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_1].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_1 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_1 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_1 }}">
+                  </div>
+                {% endif %}
+              </div>
+          
+            {% endif %}
+
+            {% if block.settings.column_title_2 %}
+              <div class="menu-column">
+                <h4>{{ block.settings.column_title_2 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_2].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_2 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_2 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_2 }}">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            
+         
+            {% if block.settings.column_title_3 %}
+              <div class="menu-column">
+                <h4>{{ block.settings.column_title_3 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_3].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_3 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_3 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_3 }}">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            
+           
+            {% if block.settings.column_title_4 %}
+              <div class="menu-column">
+                <h4>{{ block.settings.column_title_4 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_4].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_4 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_4 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_4 }}">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            
+           
+            {% if block.settings.column_title_5 %}
+              <div class="menu-column">
+                <h4>{{ block.settings.column_title_5 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_5].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_5 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_5 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_5 }}">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+          
+            {% if block.settings.column_title_6 %}
+              <div class="menu-column">
+                <h4>{{ block.settings.column_title_6 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_6].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_6 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_6 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_6 }}">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            
+      
+            {% if block.settings.column_title_7 %}
+              <div class="menu-column">
+                <h4>{{ block.settings.column_title_7 }}</h4>
+                <ul>
+                  {% for link in linklists[block.settings.column_links_7].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% if block.settings.column_image_7 %}
+                  <div class="menu-image">
+                    <img src="{{ block.settings.column_image_7 | img_url: 'medium' }}" alt="{{ block.settings.column_image_alt_7 }}">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+</div>
+<!-- mega menu end -->
+
+
+
+<!-- mega menu style start -->
+<style>
+
+#sid-{{ section.id }} .mega-menu {
+  position: relative;
+}
+
+#sid-{{ section.id }} .nav-list {
+  list-style: none;
+  padding: 5px;
+  margin:0 40px;
+  margin-bottom:30px;
+  margin-top:10px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  border-top:3px solid #3f3a3a;
+  border-bottom:1px solid #3f3a3a;
+ 
+
+}
+
+#sid-{{ section.id }} .nav-item {
+  margin-right: 20px;
+ text-transform:uppercase;
+}
+
+
+#sid-{{ section.id }} .nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 5px;
+}
+  
+
+
+  #sid-{{ section.id }} .nav-link:last-child:hover{
+    color:white !important;
+      background-color:#AC9B6F !important;
+      border-bottom:none;
+  }
+
+#sid-{{ section.id }} .nav-link:hover{
+  color:#AC9B6F !important;
+  border-bottom:5px solid #AC9B6F;
+
+}
+
+#sid-{{ section.id }} .mega-menu-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  right:40px;
+  background: white;
+  z-index: 1;
+  display: flex;
+  flex-wrap:wrap;
+  grid-template-columns: repeat(4, 1fr); 
+ 
+
+ 
+}
+
+#sid-{{ section.id }} .menu-column {
+  margin-right: 10px;
+ width: 200px;
+ border-left:1px solid #333;
+  padding:15px;
+}
+#sid-{{ section.id }} .menu-column:nth-child(1) {
+     border-left: none;
+}
+
+#sid-{{ section.id }} .menu-column:nth-child(4) {
+     border-left: none;
+}
+
+#sid-{{ section.id }} .menu-column:nth-child(5) {
+    border-left: none;
+}
+
+
+#sid-{{ section.id }} .menu-column h4 {
+  font-weight: 500;
+  margin-bottom: 10px;
+   margin-left:13px;
+  color:#AC9B6F;
+}
+#sid-{{ section.id }} .menu-column h4:hover{
+  color: #333;
+}
+
+#sid-{{ section.id }} .menu-column ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+#sid-{{ section.id }} .menu-column ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  font-size:12px;
+  font-weight:500;
+  margin-left:13px;
+}
+
+#sid-{{ section.id }} .menu-column ul li a:hover {
+  color: #AC9B6F; 
+}
+
+
+#sid-{{ section.id }} .menu-image {
+  margin-top: 15px;
+}
+
+#sid-{{ section.id }} .menu-image img {
+  width: 100%;
+  height: 100%;
+   margin-left:13px;
+}
+
+
+#sid-{{ section.id }} .mega-menu-content {
+  display: none;
+}
+
+
+#sid-{{ section.id }} .nav-item:hover  .mega-menu-content {
+  display: grid; 
+}
+@media (max-width: 768px) {
+#sid-{{ section.id }} .mega-menu-content{
+    grid-template-columns: repeat(2, 1fr); 
+    top: 80px;
+}
+  
+}
+  @media (max-width: 990px) {
+#sid-{{ section.id }} .mega-menu-content{
+    grid-template-columns: repeat(2, 1fr); 
+    top: 90px;
+}
+     @media (max-width: 425px) {
+#sid-{{ section.id }} .mega-menu-content{
+    grid-template-columns: repeat(1, 1fr); 
+    top: 120px;
+
+}
+#sid-{{ section.id }} .menu-image img {
+  width: 100%;
+  height: 100%;
+       margin-left:15px;   
+}
+#sid-{{ section.id }} .menu-column h4 {
+ margin-left:15px;
+       }
+#sid-{{ section.id }} .nav-link:hover{
+         border-bottom:none;
+       }
+     }
+</style>
+<!-- mega menu style end  -->
+
+{% schema %}
+{
+  "name": "Mega Menu",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "main_link_text",
+          "label": "Main Link Text",
+          "default": "Menu Item"
+        },
+         {
+          "type": "color",
+          "id": "main_link_color",
+          "label": "Main Link Text color",
+        },
+        {
+          "type": "color",
+          "id": "main_link_bg_color",
+          "label": "Main Link Text bg color",
+        },
+        {
+          "type": "url",
+          "id": "main_link_url",
+          "label": "Main Link URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_enabled",
+          "label": "Enable Mega Menu",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "column_title_1",
+          "label": "Column 1 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_1",
+          "label": "Column 1 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_1",
+          "label": "Column 1 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_1",
+          "label": "Column 1 Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "column_title_2",
+          "label": "Column 2 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_2",
+          "label": "Column 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_2",
+          "label": "Column 2 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_2",
+          "label": "Column 2 Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "column_title_3",
+          "label": "Column 3 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_3",
+          "label": "Column 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_3",
+          "label": "Column 3 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_3",
+          "label": "Column 3 Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "column_title_4",
+          "label": "Column 4 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_4",
+          "label": "Column 4 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_4",
+          "label": "Column 4 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_4",
+          "label": "Column 4 Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "column_title_5",
+          "label": "Column 5 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_5",
+          "label": "Column 5 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_5",
+          "label": "Column 5 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_5",
+          "label": "Column 5 Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "column_title_6",
+          "label": "Column 6 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_6",
+          "label": "Column 6 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_6",
+          "label": "Column 6 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_6",
+          "label": "Column 6 Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "column_title_7",
+          "label": "Column 7 Title"
+        },
+        {
+          "type": "link_list",
+          "id": "column_links_7",
+          "label": "Column 7 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_7",
+          "label": "Column 7 Image"
+        },
+        {
+          "type": "text",
+          "id": "column_image_alt_7",
+          "label": "Column 7 Image Alt Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mega Menu",
+    }
+  ]
+}
+{% endschema %}
+
+mega-menu-code.txt
+Displaying mega-menu-code.txt. 
